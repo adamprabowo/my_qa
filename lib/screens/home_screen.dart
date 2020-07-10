@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_qa/screens/quiz_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -31,7 +32,9 @@ class HomeScreen extends StatelessWidget {
                 height: 20.0,
               ),
               RaisedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushNamed(QuizScreen.routeName);
+                },
                 color: Color(0xFFFFBA00),
                 child: Text(
                   'PLAY',
