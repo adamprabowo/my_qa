@@ -1,49 +1,53 @@
 import 'package:flutter/material.dart';
-import 'package:my_qa/screens/quiz_screen.dart';
+
+import '../screens/quiz_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF2D046E),
-      body: SafeArea(
-        child: Center(
+      backgroundColor: Color(0xFF2D046E),
+      body: Container(
+        child: SingleChildScrollView(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              SizedBox(
+                height: 90,
+              ),
               Center(
                 child: Image(
                   image: AssetImage('assets/images/icon-circle.png'),
-                  height: 200.0,
-                  width: 200.0,
+                  width: 300.0,
+                  height: 300.0,
                 ),
-              ),
-              SizedBox(
-                height: 20.0,
               ),
               Text(
                 'Quiz',
                 style: TextStyle(
-                  fontSize: 50.0,
                   color: Color(0xFFA20CBE),
+                  fontSize: 90.0,
                 ),
               ),
-              SizedBox(
-                height: 20.0,
-              ),
-              RaisedButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed(QuizScreen.routeName);
-                },
-                color: Color(0xFFFFBA00),
-                child: Text(
-                  'PLAY',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
+              Container(
+                margin: EdgeInsets.symmetric(
+                  horizontal: 30,
+                  vertical: 40,
+                ),
+                child: RaisedButton(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 10.0,
+                    horizontal: 20.0,
                   ),
+                  child: Text(
+                    'PLAY',
+                    style: TextStyle(fontSize: 32.0),
+                  ),
+                  color: Color(0xFFFFBA00),
+                  textColor: Colors.white,
+                  onPressed: (){
+                    Navigator.of(context).pushNamed(QuizScreen.routeName);
+                  },
                 ),
-                padding: EdgeInsets.symmetric(horizontal: 60.0),
               ),
             ],
           ),
